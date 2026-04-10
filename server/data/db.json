@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "871568b0-799d-44ad-8f3c-fb34a2a13d43",
+      "email": "calvinhunt38324@gmail.com",
+      "displayName": "Calvin",
+      "passwordHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "createdAt": "2026-04-10T09:53:57.940Z"
+    }
+  ],
+  "readings": [
+    {
+      "id": "bd9c6e17-8777-45ce-82bb-d6cc85c2180d",
+      "userId": "871568b0-799d-44ad-8f3c-fb34a2a13d43",
+      "persistedAt": "2026-04-10T09:54:17.209Z"
+    }
+  ],
+  "favorites": [],
+  "sessions": [
+    {
+      "token": "2804e21a3c16ce96ae0469f42f379a52bd6d67920451b256",
+      "userId": "871568b0-799d-44ad-8f3c-fb34a2a13d43",
+      "createdAt": "2026-04-10T09:53:57.940Z"
+    }
+  ]
+}

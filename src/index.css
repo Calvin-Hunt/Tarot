@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f8f0dd;
+  background:
+    radial-gradient(circle at top, rgba(56, 73, 125, 0.42), transparent 32%),
+    radial-gradient(circle at 20% 20%, rgba(212, 176, 106, 0.08), transparent 20%),
+    linear-gradient(180deg, #070b19 0%, #050711 35%, #090c1b 100%);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(56, 73, 125, 0.42), transparent 32%),
+    linear-gradient(180deg, #070b19 0%, #050711 35%, #090c1b 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(212, 176, 106, 0.2) 1px, transparent 1px);
+  background-size: 220px 220px, 280px 280px, 340px 340px;
+  opacity: 0.32;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer components {
+  .panel-shell {
+    @apply rounded-[28px] border border-white/10 bg-white/[0.04] shadow-card backdrop-blur-xl;
+  }
+
+  .gold-frame {
+    position: relative;
+  }
+
+  .gold-frame::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(212, 176, 106, 0.34);
+    border-radius: 22px;
+    pointer-events: none;
+  }
+
+  .interactive-glow {
+    background: linear-gradient(120deg, rgba(212, 176, 106, 0.08), rgba(255, 255, 255, 0.03), rgba(212, 176, 106, 0.06));
+    background-size: 200% 100%;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-[#f6e8c5] via-[#d4b06a] to-[#fff3d8] bg-clip-text text-transparent;
+  }
+}
