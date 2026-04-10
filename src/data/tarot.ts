@@ -1,7 +1,82 @@
 import type { TarotCard, TarotElement, TarotSuit } from '@/types/tarot';
 
+const commonsFileBase = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+const commonsImageWidth = 480;
+
+const majorArcanaCommonsFiles: Record<string, string> = {
+  'major-fool': 'RWS Tarot 00 Fool.jpg',
+  'major-magician': 'RWS Tarot 01 Magician.jpg',
+  'major-high-priestess': 'RWS Tarot 02 High Priestess.jpg',
+  'major-empress': 'RWS Tarot 03 Empress.jpg',
+  'major-emperor': 'RWS Tarot 04 Emperor.jpg',
+  'major-hierophant': 'RWS Tarot 05 Hierophant.jpg',
+  'major-lovers': 'RWS Tarot 06 Lovers.jpg',
+  'major-chariot': 'RWS Tarot 07 Chariot.jpg',
+  'major-strength': 'RWS Tarot 08 Strength.jpg',
+  'major-hermit': 'RWS Tarot 09 Hermit.jpg',
+  'major-wheel-of-fortune': 'RWS Tarot 10 Wheel of Fortune.jpg',
+  'major-justice': 'RWS Tarot 11 Justice.jpg',
+  'major-hanged-man': 'RWS Tarot 12 Hanged Man.jpg',
+  'major-death': 'RWS Tarot 13 Death.jpg',
+  'major-temperance': 'RWS Tarot 14 Temperance.jpg',
+  'major-devil': 'RWS Tarot 15 Devil.jpg',
+  'major-tower': 'RWS Tarot 16 Tower.jpg',
+  'major-star': 'RWS Tarot 17 Star.jpg',
+  'major-moon': 'RWS Tarot 18 Moon.jpg',
+  'major-sun': 'RWS Tarot 19 Sun.jpg',
+  'major-judgement': 'RWS Tarot 20 Judgement.jpg',
+  'major-world': 'RWS Tarot 21 World.jpg',
+};
+
+const rankNumberMap: Record<string, string> = {
+  ace: '01',
+  two: '02',
+  three: '03',
+  four: '04',
+  five: '05',
+  six: '06',
+  seven: '07',
+  eight: '08',
+  nine: '09',
+  ten: '10',
+  page: '11',
+  knight: '12',
+  queen: '13',
+  king: '14',
+};
+
+function commonsCardImage(filename: string): string {
+  return `${commonsFileBase}${encodeURIComponent(filename)}?width=${commonsImageWidth}`;
+}
+
+function minorArcanaCommonsFile(cardId: string): string | null {
+  const [, suit, rank] = cardId.split('-');
+  const rankNumber = rankNumberMap[rank];
+
+  if (!suit || !rankNumber) {
+    return null;
+  }
+
+  if (suit === 'wands' && rank === 'nine') {
+    return 'Tarot Nine of Wands.jpg';
+  }
+
+  const suitPrefixes: Record<string, string> = {
+    cups: 'Cups',
+    swords: 'Swords',
+    pentacles: 'Pents',
+    wands: 'Wands',
+  };
+
+  const prefix = suitPrefixes[suit];
+
+  return prefix ? `${prefix}${rankNumber}.jpg` : null;
+}
+
 function localCardImage(cardId: string): string {
-  return `/cards/${cardId}.svg`;
+  const commonsFile = majorArcanaCommonsFiles[cardId] ?? minorArcanaCommonsFile(cardId);
+
+  return commonsFile ? commonsCardImage(commonsFile) : `/cards/${cardId}.svg`;
 }
 
 type MajorArcanaSeed = {
