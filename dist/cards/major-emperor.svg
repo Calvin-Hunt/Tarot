@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1200" viewBox="0 0 720 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141b3e"/>
+      <stop offset="100%" stop-color="#050814"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="22%" r="55%">
+      <stop offset="0%" stop-color="#d4b06a" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#d4b06a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="1200" rx="42" fill="url(#bg)"/>
+  <rect x="18" y="18" width="684" height="1164" rx="34" fill="none" stroke="#d4b06a" stroke-opacity="0.45" stroke-width="2"/>
+  <rect x="42" y="42" width="636" height="1116" rx="28" fill="none" stroke="#d4b06a" stroke-opacity="0.28" stroke-width="2"/>
+  <circle cx="360" cy="284" r="240" fill="url(#glow)"/>
+  <g stroke="#d4b06a" stroke-opacity="0.18" fill="none">
+    <circle cx="360" cy="480" r="176"/>
+    <circle cx="360" cy="480" r="128"/>
+    <circle cx="360" cy="480" r="78"/>
+  </g>
+  <g fill="none" stroke="#d4b06a" stroke-opacity="0.2">
+    <path d="M360 170 L360 790"/>
+    <path d="M110 480 L610 480"/>
+    <path d="M190 310 L530 650"/>
+    <path d="M530 310 L190 650"/>
+  </g>
+  <text x="360" y="154" fill="#f7e9be" font-size="36" text-anchor="middle" font-family="Georgia, serif" letter-spacing="7">MAJOR ARCANA</text>
+  <text x="360" y="452" fill="#d4b06a" font-size="132" text-anchor="middle" font-family="Georgia, serif">⚚</text>
+  <text x="360" y="566" fill="#fff3d8" font-size="58" text-anchor="middle" font-family="Georgia, serif">IV</text>
+  <text x="360" y="900" fill="#fff4dc" font-size="42" text-anchor="middle" font-family="Georgia, serif">The Emperor</text>
+  <text x="360" y="958" fill="#d9c7a0" font-size="32" text-anchor="middle" font-family="'Microsoft YaHei', 'Noto Sans SC', sans-serif">皇帝</text>
+  <g fill="#d4b06a" fill-opacity="0.6">
+    <circle cx="360" cy="84" r="4"/>
+    <circle cx="360" cy="1116" r="4"/>
+    <circle cx="84" cy="600" r="4"/>
+    <circle cx="636" cy="600" r="4"/>
+  </g>
+</svg>
